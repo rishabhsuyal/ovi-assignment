@@ -24,7 +24,6 @@ function SearchArea({ setSearch }) {
     }
     
     function handleClick(his) {
-        console.log("hi");
         var input = document.getElementById("search");
         input.value = his
         setSearch(his);
