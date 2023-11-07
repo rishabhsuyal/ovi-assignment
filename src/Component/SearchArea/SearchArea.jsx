@@ -17,7 +17,7 @@ function SearchArea({ setSearch }) {
     function handleChange(e){
         e.preventDefault();
         setSearch(e.target.value)
-        if(e.target.value!=""){
+        if(e.target.value!==""){
             setHistoryData(prev=>[e.target.value,...prev]);
             localStorage.setItem("history",JSON.stringify(historyData))
     }
