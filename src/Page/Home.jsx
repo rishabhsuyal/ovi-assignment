@@ -11,7 +11,7 @@ function Home() {
     const [search, setSearch] = useState("");
     const [page, setPage] = useState(1);
     const [data, setData] = useState([]);
-    const [total, setTotal] = useState(20);
+    const [total, setTotal] = useState(50);
     const [hasMore, sethasMore] = useState(true);
     const [loading, setLoading] = useState(false);
 

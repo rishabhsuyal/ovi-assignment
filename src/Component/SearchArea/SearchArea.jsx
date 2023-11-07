@@ -17,13 +17,14 @@ function SearchArea({ setSearch }) {
     function handleChange(e){
         e.preventDefault();
         setSearch(e.target.value)
-        if(e.target.value!==""){
+        if(e.target.value!=""){
             setHistoryData(prev=>[e.target.value,...prev]);
             localStorage.setItem("history",JSON.stringify(historyData))
     }
     }
     
     function handleClick(his) {
+        console.log("hi");
         var input = document.getElementById("search");
         input.value = his
         setSearch(his);
@@ -36,7 +37,7 @@ function SearchArea({ setSearch }) {
     return (
 
        <div className='fixed left-1/2 right-1/2'>
-         <div class="flex justify-center p-4">
+         <div class="flex justify-center mt-10">
             <div class="">
                 <div class="w-96 max-w-lg">
                     <form onSubmit={e => { e.preventDefault(); }}>
@@ -56,9 +57,9 @@ function SearchArea({ setSearch }) {
                     </div>
                    {
                     historyData.length>0 &&
-                     <div className='flex justify-end mt-3'>
+                     <div className='flex justify-end mt-2'>
                        <button onClick={handleDelete} type="button" class="focus:outline-none text-white bg-red-700 hover:bg-red-800 focus:ring-4 focus:ring-red-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-red-600 dark:hover:bg-red-700 dark:focus:ring-red-900">Clear</button>
-                      </div>
+                     </div>
                    }
                 </div>
             </div>
